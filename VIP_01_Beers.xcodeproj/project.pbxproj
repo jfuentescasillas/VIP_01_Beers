@@ -9,13 +9,25 @@
 /* Begin PBXBuildFile section */
 		1195ACE82A24F5E200C02F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195ACE72A24F5E200C02F28 /* AppDelegate.swift */; };
 		1195ACEA2A24F5E200C02F28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195ACE92A24F5E200C02F28 /* SceneDelegate.swift */; };
-		1195ACEC2A24F5E200C02F28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195ACEB2A24F5E200C02F28 /* ViewController.swift */; };
 		1195ACF22A24F5E200C02F28 /* VIP_01_Beers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1195ACF02A24F5E200C02F28 /* VIP_01_Beers.xcdatamodeld */; };
 		1195ACF42A24F5E500C02F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1195ACF32A24F5E500C02F28 /* Assets.xcassets */; };
 		1195ACF72A24F5E500C02F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1195ACF52A24F5E500C02F28 /* LaunchScreen.storyboard */; };
 		1195AD022A24F5E500C02F28 /* VIP_01_BeersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195AD012A24F5E500C02F28 /* VIP_01_BeersTests.swift */; };
 		1195AD0C2A24F5E500C02F28 /* VIP_01_BeersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195AD0B2A24F5E500C02F28 /* VIP_01_BeersUITests.swift */; };
 		1195AD0E2A24F5E500C02F28 /* VIP_01_BeersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195AD0D2A24F5E500C02F28 /* VIP_01_BeersUITestsLaunchTests.swift */; };
+		11B44B242A25FB5C001A0A59 /* BeersCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B1E2A25FB5C001A0A59 /* BeersCollectionPresenter.swift */; };
+		11B44B252A25FB5C001A0A59 /* BeersCollectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B1F2A25FB5C001A0A59 /* BeersCollectionRouter.swift */; };
+		11B44B262A25FB5C001A0A59 /* BeersCollectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B202A25FB5C001A0A59 /* BeersCollectionModels.swift */; };
+		11B44B272A25FB5C001A0A59 /* BeersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B212A25FB5C001A0A59 /* BeersCollectionViewController.swift */; };
+		11B44B282A25FB5C001A0A59 /* BeersCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B222A25FB5C001A0A59 /* BeersCollectionInteractor.swift */; };
+		11B44B292A25FB5C001A0A59 /* BeersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B232A25FB5C001A0A59 /* BeersCollectionView.swift */; };
+		11B44B312A261143001A0A59 /* FavoriteBeersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B2B2A261143001A0A59 /* FavoriteBeersPresenter.swift */; };
+		11B44B322A261143001A0A59 /* FavoriteBeersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B2C2A261143001A0A59 /* FavoriteBeersRouter.swift */; };
+		11B44B332A261143001A0A59 /* FavoriteBeersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B2D2A261143001A0A59 /* FavoriteBeersModels.swift */; };
+		11B44B342A261143001A0A59 /* FavoriteBeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B2E2A261143001A0A59 /* FavoriteBeersViewController.swift */; };
+		11B44B352A261143001A0A59 /* FavoriteBeersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B2F2A261143001A0A59 /* FavoriteBeersInteractor.swift */; };
+		11B44B362A261143001A0A59 /* FavoriteBeersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B302A261143001A0A59 /* FavoriteBeersView.swift */; };
+		11B44B392A265583001A0A59 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B382A265583001A0A59 /* UITabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +51,6 @@
 		1195ACE42A24F5E200C02F28 /* VIP_01_Beers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIP_01_Beers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1195ACE72A24F5E200C02F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1195ACE92A24F5E200C02F28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1195ACEB2A24F5E200C02F28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1195ACF12A24F5E200C02F28 /* VIP_01_Beers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VIP_01_Beers.xcdatamodel; sourceTree = "<group>"; };
 		1195ACF32A24F5E500C02F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1195ACF62A24F5E500C02F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +60,19 @@
 		1195AD072A24F5E500C02F28 /* VIP_01_BeersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIP_01_BeersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1195AD0B2A24F5E500C02F28 /* VIP_01_BeersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIP_01_BeersUITests.swift; sourceTree = "<group>"; };
 		1195AD0D2A24F5E500C02F28 /* VIP_01_BeersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIP_01_BeersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		11B44B1E2A25FB5C001A0A59 /* BeersCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionPresenter.swift; sourceTree = "<group>"; };
+		11B44B1F2A25FB5C001A0A59 /* BeersCollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionRouter.swift; sourceTree = "<group>"; };
+		11B44B202A25FB5C001A0A59 /* BeersCollectionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionModels.swift; sourceTree = "<group>"; };
+		11B44B212A25FB5C001A0A59 /* BeersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionViewController.swift; sourceTree = "<group>"; };
+		11B44B222A25FB5C001A0A59 /* BeersCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionInteractor.swift; sourceTree = "<group>"; };
+		11B44B232A25FB5C001A0A59 /* BeersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionView.swift; sourceTree = "<group>"; };
+		11B44B2B2A261143001A0A59 /* FavoriteBeersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersPresenter.swift; sourceTree = "<group>"; };
+		11B44B2C2A261143001A0A59 /* FavoriteBeersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersRouter.swift; sourceTree = "<group>"; };
+		11B44B2D2A261143001A0A59 /* FavoriteBeersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersModels.swift; sourceTree = "<group>"; };
+		11B44B2E2A261143001A0A59 /* FavoriteBeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersViewController.swift; sourceTree = "<group>"; };
+		11B44B2F2A261143001A0A59 /* FavoriteBeersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersInteractor.swift; sourceTree = "<group>"; };
+		11B44B302A261143001A0A59 /* FavoriteBeersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersView.swift; sourceTree = "<group>"; };
+		11B44B382A265583001A0A59 /* UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +123,10 @@
 		1195ACE62A24F5E200C02F28 /* VIP_01_Beers */ = {
 			isa = PBXGroup;
 			children = (
+				11B44B372A265562001A0A59 /* TabBarControllers */,
+				1195AD1B2A25EDB600C02F28 /* Scenes */,
 				1195ACE72A24F5E200C02F28 /* AppDelegate.swift */,
 				1195ACE92A24F5E200C02F28 /* SceneDelegate.swift */,
-				1195ACEB2A24F5E200C02F28 /* ViewController.swift */,
 				1195ACF32A24F5E500C02F28 /* Assets.xcassets */,
 				1195ACF52A24F5E500C02F28 /* LaunchScreen.storyboard */,
 				1195ACF82A24F5E500C02F28 /* Info.plist */,
@@ -125,6 +150,49 @@
 				1195AD0D2A24F5E500C02F28 /* VIP_01_BeersUITestsLaunchTests.swift */,
 			);
 			path = VIP_01_BeersUITests;
+			sourceTree = "<group>";
+		};
+		1195AD1A2A25ED7D00C02F28 /* BeersCollection */ = {
+			isa = PBXGroup;
+			children = (
+				11B44B232A25FB5C001A0A59 /* BeersCollectionView.swift */,
+				11B44B212A25FB5C001A0A59 /* BeersCollectionViewController.swift */,
+				11B44B222A25FB5C001A0A59 /* BeersCollectionInteractor.swift */,
+				11B44B1E2A25FB5C001A0A59 /* BeersCollectionPresenter.swift */,
+				11B44B1F2A25FB5C001A0A59 /* BeersCollectionRouter.swift */,
+				11B44B202A25FB5C001A0A59 /* BeersCollectionModels.swift */,
+			);
+			path = BeersCollection;
+			sourceTree = "<group>";
+		};
+		1195AD1B2A25EDB600C02F28 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1195AD1A2A25ED7D00C02F28 /* BeersCollection */,
+				11B44B2A2A261122001A0A59 /* FavoriteBeers */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		11B44B2A2A261122001A0A59 /* FavoriteBeers */ = {
+			isa = PBXGroup;
+			children = (
+				11B44B302A261143001A0A59 /* FavoriteBeersView.swift */,
+				11B44B2E2A261143001A0A59 /* FavoriteBeersViewController.swift */,
+				11B44B2F2A261143001A0A59 /* FavoriteBeersInteractor.swift */,
+				11B44B2B2A261143001A0A59 /* FavoriteBeersPresenter.swift */,
+				11B44B2C2A261143001A0A59 /* FavoriteBeersRouter.swift */,
+				11B44B2D2A261143001A0A59 /* FavoriteBeersModels.swift */,
+			);
+			path = FavoriteBeers;
+			sourceTree = "<group>";
+		};
+		11B44B372A265562001A0A59 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11B44B382A265583001A0A59 /* UITabBarController.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +325,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B44B392A265583001A0A59 /* UITabBarController.swift in Sources */,
+				11B44B342A261143001A0A59 /* FavoriteBeersViewController.swift in Sources */,
 				1195ACF22A24F5E200C02F28 /* VIP_01_Beers.xcdatamodeld in Sources */,
-				1195ACEC2A24F5E200C02F28 /* ViewController.swift in Sources */,
+				11B44B312A261143001A0A59 /* FavoriteBeersPresenter.swift in Sources */,
+				11B44B322A261143001A0A59 /* FavoriteBeersRouter.swift in Sources */,
+				11B44B332A261143001A0A59 /* FavoriteBeersModels.swift in Sources */,
+				11B44B272A25FB5C001A0A59 /* BeersCollectionViewController.swift in Sources */,
 				1195ACE82A24F5E200C02F28 /* AppDelegate.swift in Sources */,
+				11B44B242A25FB5C001A0A59 /* BeersCollectionPresenter.swift in Sources */,
+				11B44B282A25FB5C001A0A59 /* BeersCollectionInteractor.swift in Sources */,
+				11B44B292A25FB5C001A0A59 /* BeersCollectionView.swift in Sources */,
+				11B44B352A261143001A0A59 /* FavoriteBeersInteractor.swift in Sources */,
+				11B44B262A25FB5C001A0A59 /* BeersCollectionModels.swift in Sources */,
+				11B44B252A25FB5C001A0A59 /* BeersCollectionRouter.swift in Sources */,
+				11B44B362A261143001A0A59 /* FavoriteBeersView.swift in Sources */,
 				1195ACEA2A24F5E200C02F28 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,9 +514,8 @@
 				INFOPLIST_FILE = VIP_01_Beers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,9 +523,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "JorgeFuentes.VIP-01-Beers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,9 +544,8 @@
 				INFOPLIST_FILE = VIP_01_Beers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,9 +553,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "JorgeFuentes.VIP-01-Beers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
