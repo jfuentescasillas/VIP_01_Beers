@@ -66,6 +66,7 @@ class FavoriteBeersViewController: UIViewController {
 		
 		setupNavigationBar()
 		doLoadStaticData()
+		hideKeyboardWhenTappedAround()
 	}
 	
 	

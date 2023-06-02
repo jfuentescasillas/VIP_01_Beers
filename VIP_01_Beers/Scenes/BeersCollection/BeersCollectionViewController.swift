@@ -13,6 +13,7 @@ import UIKit
 // MARK: - Protocols
 protocol BeersCollectionDisplayLogic: AnyObject {
 	func displayStaticData(viewModel: BeersCollection.StaticData.ViewModel)
+	func displayBeersList(viewModel: BeersCollection.FetchBeers.ViewModel)
 }
 
 
@@ -70,10 +71,24 @@ class BeersCollectionViewController: UIViewController {
 		
 		setupNavigationBar()
 		doLoadStaticData()
+		fetchBeersOnLoad()
+	}
+	
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		
 	}
 	
 	
 	// MARK: - Private Methods
+	private func fetchBeersOnLoad() {
+		let request = BeersCollection.FetchBeers.Request()
+		interactor?.fetchBeers(request: request)
+	}
+	
+	
 	private func setupNavigationBar() {
 	}
 }
@@ -90,6 +105,13 @@ extension BeersCollectionViewController {
 // MARK: - Extension. BeersCollectionDisplayLogic (Input)
 extension BeersCollectionViewController: BeersCollectionDisplayLogic {
 	func displayStaticData(viewModel: BeersCollection.StaticData.ViewModel) {
+		
+	}
+	
+	
+	func displayBeersList(viewModel: BeersCollection.FetchBeers.ViewModel) {
+		print("In the VIEWCONTROLLER (and the cycle is closed), the viewModel is: \(viewModel)")
+		print("-----------------------")
 		
 	}
 }

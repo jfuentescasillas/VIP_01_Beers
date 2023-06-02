@@ -22,6 +22,30 @@ enum BeersCollection {
 		struct ViewModel {
 		}
 	}
+	
+	
+	enum FetchBeers {
+		struct Request {
+			// Request
+		}
+		
+		struct Response {
+			// Response
+			var beers: [BeerModel]
+		}
+	
+		struct ViewModel {
+			// ViewModel
+			struct DisplayedBeer {
+				var beerID: Int
+				var beerName: String
+				var beerDescription: String
+				var beerImgURL: String
+			}
+			
+			var displayedBeers: [DisplayedBeer]
+		}
+	}
 }
 
 
