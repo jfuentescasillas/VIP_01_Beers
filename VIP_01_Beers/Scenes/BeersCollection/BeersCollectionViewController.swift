@@ -110,8 +110,9 @@ extension BeersCollectionViewController: BeersCollectionDisplayLogic {
 	
 	
 	func displayBeersList(viewModel: BeersCollection.FetchBeers.ViewModel) {
-		print("In the VIEWCONTROLLER (and the cycle is closed), the viewModel is: \(viewModel)")
-		print("-----------------------")
+		print("In the VIEWCONTROLLER (and the cycle is closed), the viewModel is: ")
+		print("\(viewModel)")
+		print("----------------------------------------------\n")
 		
 	}
 }

@@ -32,22 +32,21 @@ class BeersCollectionPresenter: BeersCollectionPresentationLogic {
 	
 	
 	func presentBeersCollection(response: BeersCollection.FetchBeers.Response) {
-		print("In the PRESENTER, the response is: \(response)")
-		print("-----------------------")
+		print("In the PRESENTER, the response is:")
+		print("\(response)")
+		print("----------------------------------------------\n")
 		
-		var displayedBeerViewModel = [BeersCollection.FetchBeers.ViewModel.DisplayedBeer]()
-		
-		for beer in response.beers {
-			let displayedBeer = BeersCollection.FetchBeers.ViewModel.DisplayedBeer(
+		let displayedBeers: [BeersCollection.FetchBeers.ViewModel.DisplayedBeer] = response.beers.map { beer in
+			let displayedBeer =	BeersCollection.FetchBeers.ViewModel.DisplayedBeer(
 				beerID: beer.id,
 				beerName: beer.name,
 				beerDescription: beer.beerDescription,
 				beerImgURL: beer.imageURL ?? "https://images.punkapi.com/v2/keg.png")
 			
-			displayedBeerViewModel.append(displayedBeer)
+			return displayedBeer
 		}
 		
-		let viewModel = BeersCollection.FetchBeers.ViewModel(displayedBeers: displayedBeerViewModel)
+		let viewModel = BeersCollection.FetchBeers.ViewModel(displayedBeers: displayedBeers)
 		viewController?.displayBeersList(viewModel: viewModel)
 	}
 	

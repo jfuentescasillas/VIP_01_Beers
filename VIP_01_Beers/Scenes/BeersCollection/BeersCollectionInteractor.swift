@@ -8,6 +8,7 @@
 
 
 import Foundation
+import Combine
 
 
 // MARK: - Protocols
@@ -24,9 +25,16 @@ protocol BeersCollectionDataStore {
 
 // MARK: - Class
 class BeersCollectionInteractor: BeersCollectionDataStore {
-	// MARK: - Properties
+	// MARK: - Public Properties
 	var beersCollection: [BeerModel]?
 	var presenter: BeersCollectionPresentationLogic?
+	
+	// MARK: - Private Properties
+	private var cancellable 	  		  = Set<AnyCancellable>()
+	private var paginationNr: Int 		  = 2
+	private var numberOfBeersFetched: Int = 0
+	private var viewModel 				  = [BeerModel]()
+	private var viewModelAux		 	  = [BeerModel]()
 	
 	// Original: private let beerUrl: String = "https://api.punkapi.com/v2/beers?page=\(pageNumber)&per_page=80"
 	private let worker: BeersStoreProtocol = BeersWorker()
@@ -47,7 +55,8 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 	
 	
 	func fetchBeers(request: BeersCollection.FetchBeers.Request) {
-		worker.fetchBeers(withPaginationNumber: 1) { beersResult in
+		// Process using URLSession
+		/* worker.fetchBeers(withPaginationNumber: 1) { beersResult in
 			switch beersResult {
 			case .success(let beers):
 				let response = BeersCollection.FetchBeers.Response(beers: beers)
@@ -56,6 +65,43 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 			case .failure:
 				self.presenter?.fetchBeersCollectionDidFail(error: "Error Fetching the beers")
 			}
+		} */
+		
+		
+		// Process using Combine Version 1
+		// viewController?.startActivity()  ----> Use: self.presenter?.startActivity()
+		
+		worker.fetchCharactersFromAPIBusiness(withPagination: paginationNr) { [weak self] resultArray in
+			guard let self else { return }
+			guard let resultArray else { return }
+			
+			self.viewModel.removeAll()
+			self.viewModel 	  = resultArray
+			self.viewModelAux = self.viewModel
+			self.numberOfBeersFetched = resultArray.count
+			
+			let response = BeersCollection.FetchBeers.Response(beers: self.viewModel)
+			self.presenter?.presentBeersCollection(response: response)
+			
+			// self.viewController?.stopAndHideActivity()  ----> Use: self.presenter?.stopAndHideActivity()
+		} failure: { [weak self] errorApi in
+			guard self != nil else { return }
+			guard let errorString = errorApi?.localizedDescription else { return }
+			
+			let errorInt: Int = Int(errorString) ?? -100
+			
+			switch errorInt {
+			case (400...499):
+				print("self.viewController?.showClientRequestErrorMsg()")
+				
+			case (500...599):
+				print("self.viewController?.showServerErrorMsg()")
+				
+			default:
+				print("self.viewController?.showNoInternetMsg()")
+			}
+			
+			print("errorApi?.localizedDescription fetching chars: \(errorApi?.localizedDescription ?? "Error fetching chars")")
 		}
 	}
 }
