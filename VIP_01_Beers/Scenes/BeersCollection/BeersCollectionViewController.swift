@@ -72,13 +72,12 @@ class BeersCollectionViewController: UIViewController {
 		setupNavigationBar()
 		doLoadStaticData()
 		fetchBeersOnLoad()
+		hideKeyboardWhenTappedAround()
 	}
 	
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
-		
 	}
 	
 	
@@ -90,6 +89,7 @@ class BeersCollectionViewController: UIViewController {
 	
 	
 	private func setupNavigationBar() {
+		
 	}
 }
 
@@ -102,6 +102,7 @@ extension BeersCollectionViewController {
 	}
 }
 
+
 // MARK: - Extension. BeersCollectionDisplayLogic (Input)
 extension BeersCollectionViewController: BeersCollectionDisplayLogic {
 	func displayStaticData(viewModel: BeersCollection.StaticData.ViewModel) {
@@ -113,7 +114,6 @@ extension BeersCollectionViewController: BeersCollectionDisplayLogic {
 		print("In the VIEWCONTROLLER (and the cycle is closed), the viewModel is: ")
 		print("\(viewModel)")
 		print("----------------------------------------------\n")
-		
 	}
 }
 

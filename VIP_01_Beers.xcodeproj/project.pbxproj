@@ -19,6 +19,8 @@
 		110D2C822A28B4D500511782 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D2C812A28B4D500511782 /* ApiError.swift */; };
 		110D2C862A28B80A00511782 /* BeersDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 110D2C842A28B80A00511782 /* BeersDataModel.xcdatamodeld */; };
 		110D2C882A28BAA500511782 /* BeersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D2C872A28BAA500511782 /* BeersWorker.swift */; };
+		116C842E2A34C9E9007BE3B2 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 116C842D2A34C9E9007BE3B2 /* Collections */; };
+		116C84302A34C9E9007BE3B2 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 116C842F2A34C9E9007BE3B2 /* OrderedCollections */; };
 		1195ACE82A24F5E200C02F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195ACE72A24F5E200C02F28 /* AppDelegate.swift */; };
 		1195ACEA2A24F5E200C02F28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195ACE92A24F5E200C02F28 /* SceneDelegate.swift */; };
 		1195ACF42A24F5E500C02F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1195ACF32A24F5E500C02F28 /* Assets.xcassets */; };
@@ -27,6 +29,7 @@
 		1195AD0C2A24F5E500C02F28 /* VIP_01_BeersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195AD0B2A24F5E500C02F28 /* VIP_01_BeersUITests.swift */; };
 		1195AD0E2A24F5E500C02F28 /* VIP_01_BeersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195AD0D2A24F5E500C02F28 /* VIP_01_BeersUITestsLaunchTests.swift */; };
 		11961C3E2A2A52430089DEDB /* BeerDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11961C3D2A2A52430089DEDB /* BeerDetailsModel.swift */; };
+		11A919BA2A39C62B00AE65BA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A919B92A39C62B00AE65BA /* NetworkManager.swift */; };
 		11B44B242A25FB5C001A0A59 /* BeersCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B1E2A25FB5C001A0A59 /* BeersCollectionPresenter.swift */; };
 		11B44B252A25FB5C001A0A59 /* BeersCollectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B1F2A25FB5C001A0A59 /* BeersCollectionRouter.swift */; };
 		11B44B262A25FB5C001A0A59 /* BeersCollectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B202A25FB5C001A0A59 /* BeersCollectionModels.swift */; };
@@ -84,6 +87,7 @@
 		1195AD0B2A24F5E500C02F28 /* VIP_01_BeersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIP_01_BeersUITests.swift; sourceTree = "<group>"; };
 		1195AD0D2A24F5E500C02F28 /* VIP_01_BeersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIP_01_BeersUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		11961C3D2A2A52430089DEDB /* BeerDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsModel.swift; sourceTree = "<group>"; };
+		11A919B92A39C62B00AE65BA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		11B44B1E2A25FB5C001A0A59 /* BeersCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionPresenter.swift; sourceTree = "<group>"; };
 		11B44B1F2A25FB5C001A0A59 /* BeersCollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionRouter.swift; sourceTree = "<group>"; };
 		11B44B202A25FB5C001A0A59 /* BeersCollectionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersCollectionModels.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116C84302A34C9E9007BE3B2 /* OrderedCollections in Frameworks */,
+				116C842E2A34C9E9007BE3B2 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +251,7 @@
 		1195ACE62A24F5E200C02F28 /* VIP_01_Beers */ = {
 			isa = PBXGroup;
 			children = (
+				11A919B82A39C61900AE65BA /* Managers */,
 				110D2C652A2737CC00511782 /* CustomViews */,
 				110D2C7D2A288BA200511782 /* EntitiesOrModels */,
 				1195AD1B2A25EDB600C02F28 /* Scenes */,
@@ -298,6 +305,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		11A919B82A39C61900AE65BA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				11A919B92A39C62B00AE65BA /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		11B44B2A2A261122001A0A59 /* FavoriteBeers */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +350,10 @@
 			dependencies = (
 			);
 			name = VIP_01_Beers;
+			packageProductDependencies = (
+				116C842D2A34C9E9007BE3B2 /* Collections */,
+				116C842F2A34C9E9007BE3B2 /* OrderedCollections */,
+			);
 			productName = VIP_01_Beers;
 			productReference = 1195ACE42A24F5E200C02F28 /* VIP_01_Beers.app */;
 			productType = "com.apple.product-type.application";
@@ -407,6 +426,9 @@
 				Base,
 			);
 			mainGroup = 1195ACDB2A24F5E200C02F28;
+			packageReferences = (
+				116C842C2A34C9E9007BE3B2 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 1195ACE52A24F5E200C02F28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -463,6 +485,7 @@
 				110D2C862A28B80A00511782 /* BeersDataModel.xcdatamodeld in Sources */,
 				110D2C7B2A27AE1600511782 /* BeersAlertContainerView.swift in Sources */,
 				11B44B282A25FB5C001A0A59 /* BeersCollectionInteractor.swift in Sources */,
+				11A919BA2A39C62B00AE65BA /* NetworkManager.swift in Sources */,
 				110D2C882A28BAA500511782 /* BeersWorker.swift in Sources */,
 				11B44B292A25FB5C001A0A59 /* BeersCollectionView.swift in Sources */,
 				110D2C712A279C5200511782 /* BeersTitleLabel.swift in Sources */,
@@ -814,6 +837,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		116C842C2A34C9E9007BE3B2 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		116C842D2A34C9E9007BE3B2 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116C842C2A34C9E9007BE3B2 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		116C842F2A34C9E9007BE3B2 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 116C842C2A34C9E9007BE3B2 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		110D2C842A28B80A00511782 /* BeersDataModel.xcdatamodeld */ = {

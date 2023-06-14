@@ -20,6 +20,7 @@ protocol BeersCollectionViewDelegate: AnyObject {
 class BeersCollectionView: UIView {
 	// MARK: - Constants
 	private struct ViewTraits {
+		
 	}
 	
 	
@@ -43,6 +44,7 @@ class BeersCollectionView: UIView {
 	
 	// MARK: - Public Methods
 	func setupUI(data: BeersCollectionViewData) {
+		
 	}
 	
 	
@@ -54,6 +56,7 @@ class BeersCollectionView: UIView {
 	
 	private func setupConstraints() {
 		NSLayoutConstraint.activate([
+			
 		])
 	}
 }

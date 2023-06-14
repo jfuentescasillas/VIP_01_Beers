@@ -8,7 +8,6 @@
 
 
 import Foundation
-import Combine
 
 
 // MARK: - Protocols
@@ -30,16 +29,12 @@ class BeersCollectionInteractor: BeersCollectionDataStore {
 	var presenter: BeersCollectionPresentationLogic?
 	
 	// MARK: - Private Properties
-	private var cancellable 	  		  = Set<AnyCancellable>()
-	private var paginationNr: Int 		  = 2
+	private var paginationNr: Int 		  = 1
 	private var numberOfBeersFetched: Int = 0
 	private var viewModel 				  = [BeerModel]()
 	private var viewModelAux		 	  = [BeerModel]()
 	
-	// Original: private let beerUrl: String = "https://api.punkapi.com/v2/beers?page=\(pageNumber)&per_page=80"
 	private let worker: BeersStoreProtocol = BeersWorker()
-	
-	// MARK: - Public Methods
 	
 	
 	// MARK: - Private Methods
@@ -48,6 +43,7 @@ class BeersCollectionInteractor: BeersCollectionDataStore {
 
 // MARK: - Extension. BeersCollectionBusinessLogic
 extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
+	// MARK: - Public Methods
 	func doLoadStaticData(request: BeersCollection.StaticData.Request) {
 		let response = BeersCollection.StaticData.Response()
 		presenter?.presentStaticData(response: response)
@@ -56,22 +52,48 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 	
 	func fetchBeers(request: BeersCollection.FetchBeers.Request) {
 		// Process using URLSession
-		/* worker.fetchBeers(withPaginationNumber: 1) { beersResult in
+		worker.fetchBeers(withPaginationNumber: paginationNr) { beersResult in
 			switch beersResult {
 			case .success(let beers):
 				let response = BeersCollection.FetchBeers.Response(beers: beers)
 				self.presenter?.presentBeersCollection(response: response)
 				
-			case .failure:
-				self.presenter?.fetchBeersCollectionDidFail(error: "Error Fetching the beers")
+			case .failure(let error):
+				var errorCode: Int = -100
+				
+				print("Error code received: \(error.localizedDescription)")
+				
+				switch error {
+				case .clientError(let reason),
+						.serverError(let reason):
+					guard let reasonInt = Int(reason) else { return }
+					
+					errorCode = reasonInt
+					
+				default:
+					break
+				}
+				
+				switch errorCode {
+				case 400...499:
+					print("self.presenter?.showClientRequestErrorMsg()")
+				
+				case 500...599:
+					print("self.presenter?.showServerErrorMsg()")
+				
+				default:
+					print("self.presenter?.showNoInternetMsg()")
+				}
+				
+				// self.presenter?.fetchBeersCollectionDidFail(error: "Error Fetching the beers: \(error)")
 			}
-		} */
+		}
 		
 		
-		// Process using Combine Version 1
+		// Process using Combine in the Worker. It Works
 		// viewController?.startActivity()  ----> Use: self.presenter?.startActivity()
 		
-		worker.fetchCharactersFromAPIBusiness(withPagination: paginationNr) { [weak self] resultArray in
+		/* worker.fetchBeersFromAPIBusiness(withPagination: paginationNr) { [weak self] resultArray in
 			guard let self else { return }
 			guard let resultArray else { return }
 			
@@ -92,16 +114,16 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 			
 			switch errorInt {
 			case (400...499):
-				print("self.viewController?.showClientRequestErrorMsg()")
+				print("self.presenter?.showClientRequestErrorMsg()")
 				
 			case (500...599):
-				print("self.viewController?.showServerErrorMsg()")
+				print("self.presenter?.showServerErrorMsg()")
 				
 			default:
-				print("self.viewController?.showNoInternetMsg()")
+				print("self.presenter?.showNoInternetMsg()")
 			}
 			
 			print("errorApi?.localizedDescription fetching chars: \(errorApi?.localizedDescription ?? "Error fetching chars")")
-		}
+		} */
 	}
 }

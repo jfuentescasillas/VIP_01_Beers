@@ -14,6 +14,7 @@ enum ApiError: Error, LocalizedError {
 	case unknownError
 	case badUrl
 	case generic(Error?)
+	case clientError(reason: String)
 	case serverError(reason: String)
 	case internalError(reason: String)
 	case apiError(reason: String)
@@ -29,7 +30,8 @@ enum ApiError: Error, LocalizedError {
 		case .generic(let error):
 			return error?.localizedDescription
 			
-		case .serverError(let error),
+		case .clientError(let error),
+				.serverError(let error),
 				.internalError(let error),
 				.apiError(let error):
 			return error
