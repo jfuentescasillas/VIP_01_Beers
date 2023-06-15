@@ -7,7 +7,7 @@
 //
 
 
-import Foundation
+import UIKit
 
 
 // MARK: - Protocols
@@ -31,6 +31,7 @@ class BeersCollectionInteractor: BeersCollectionDataStore {
 	// MARK: - Private Properties
 	private var paginationNr: Int 		  = 1
 	private var numberOfBeersFetched: Int = 0
+	private var isLoadingMoreBeers: Bool  = false
 	private var viewModel 				  = [BeerModel]()
 	private var viewModelAux		 	  = [BeerModel]()
 	
@@ -51,8 +52,8 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 	
 	
 	func fetchBeers(request: BeersCollection.FetchBeers.Request) {
-		// Process using URLSession
-		worker.fetchBeers(withPaginationNumber: paginationNr) { beersResult in
+		// MARK: Process using URLSession
+		/* worker.fetchBeers(withPaginationNumber: paginationNr) { beersResult in
 			switch beersResult {
 			case .success(let beers):
 				let response = BeersCollection.FetchBeers.Response(beers: beers)
@@ -87,10 +88,10 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 				
 				// self.presenter?.fetchBeersCollectionDidFail(error: "Error Fetching the beers: \(error)")
 			}
-		}
+		} */
 		
 		
-		// Process using Combine in the Worker. It Works
+		// MARK: Process using Combine in the Worker. It Works
 		// viewController?.startActivity()  ----> Use: self.presenter?.startActivity()
 		
 		/* worker.fetchBeersFromAPIBusiness(withPagination: paginationNr) { [weak self] resultArray in
@@ -125,5 +126,57 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 			
 			print("errorApi?.localizedDescription fetching chars: \(errorApi?.localizedDescription ?? "Error fetching chars")")
 		} */
+		
+		
+		// MARK: Process using async-await. It Works.
+		Task {
+			do {
+				let beers = try await worker.fetchBeers(withPaginationNumber: paginationNr)
+				viewModel.removeAll()
+				viewModel = beers
+				viewModelAux = viewModel
+				numberOfBeersFetched = beers.count
+				
+				let response = BeersCollection.FetchBeers.Response(beers: viewModel)
+				presenter?.presentBeersCollection(response: response)
+				
+				isLoadingMoreBeers = false
+			} catch let error as ApiError {
+				switch error {
+				case .clientError(let reason):
+					// Handle client error case
+					print("self.presenter?.showClientRequestErrorMsg(): \(reason)")
+					print("------------------------------------\n")
+					
+				case .serverError(let reason):
+					// Handle server error case
+					print("self.presenter?.showServerErrorMsg(): \(reason)")
+					print("------------------------------------\n")
+					
+				case .noInternetConnection:
+					// Handle no internet connection case
+					print("self.presenter?.showNoInternetMsg()")
+					print("------------------------------------\n")
+					
+				default:
+					// Handle other errors
+					print("self.presenter?.showGenericErrorMsg()")
+					print("------------------------------------\n")
+				}
+				
+				isLoadingMoreBeers = false
+				// dismissLoadingView()
+				
+			} catch /* let errorCatched */ {
+				// Handle unexpected errors. Most probably of type noInternetConnection
+				print("------------------------------------\n")
+				print("Most probably this is a self.presenter?.showNoInternetMsg() but it should be a self.presenter?.showGenericErrorMsg()")
+				// print("Most probably this is a self.presenter?.showNoInternetMsg() but it should be a self.presenter?.showGenericErrorMsg(): \(errorCatched)")
+				print("------------------------------------\n")
+				
+				isLoadingMoreBeers = false
+				// dismissLoadingView()
+			}
+		}
 	}
 }

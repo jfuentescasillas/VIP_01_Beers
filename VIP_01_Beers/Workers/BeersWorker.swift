@@ -10,25 +10,29 @@
 
 
 import Foundation
-// import Combine
+// import Combine  // Uncomment when using the Methodology with Combine
 
 
 // MARK: - Orders store API
 protocol BeersStoreProtocol {
 	// MARK: Fetch beers using URLSession. It Works
-	func fetchBeers(withPaginationNumber: Int, _ completion: @escaping (Result<[BeerModel], ApiError>) -> ())
+	// func fetchBeers(withPaginationNumber: Int, _ completion: @escaping (Result<[BeerModel], ApiError>) -> ())
 	
 	// MARK: Fetch beers using Combine. It Works
 	// func fetchBeersFromAPIBusiness(withPagination: Int, success: @escaping([BeerModel]?) -> Void, failure: @escaping(ApiError?) -> Void)
+	
+	// MARK: Fetch beers using Async-Await
+	func fetchBeers(withPaginationNumber: Int) async throws -> [BeerModel]
 }
 
 
 // MARK: - Class. BeersWorker
 class BeersWorker: BeersStoreProtocol {
-	// private var cancellable = Set<AnyCancellable>()  // Used in Combine
+	// private var cancellable = Set<AnyCancellable>()  // Uncomment when using the Methodology with Combine
 	
 	// MARK: Fetch Beers using URLSession. It Works
-	func fetchBeers(withPaginationNumber: Int, _ completion: @escaping (Result<[BeerModel], ApiError>) -> ()) {
+	/* func fetchBeers(withPaginationNumber: Int, _ completion: @escaping (Result<[BeerModel], ApiError>) -> ()) {
+	    // Error Simulator
 		switch withPaginationNumber {
 		case 400...499: // Simulate a client error (HTTP status code 400)
 			let error = ApiError.clientError(reason: "\(withPaginationNumber)")
@@ -46,8 +50,8 @@ class BeersWorker: BeersStoreProtocol {
 		}
 		
 		// let beerUrl: String = "https://api.punkapi.com/v2/beers?page=\(withPaginationNumber)&per_page=80"
-		let beerModel = BeerFetchModel(page: String(withPaginationNumber))
-		let requestURL   = BeerRequestModel(model: beerModel)
+		let beerModel  = BeerFetchModel(page: String(withPaginationNumber))
+		let requestURL = BeerRequestModel(model: beerModel)
 				
 		guard let url = URL(string: requestURL.endpoint) else {
 			completion(.failure(.apiError(reason: "Invalid URL")))
@@ -100,7 +104,7 @@ class BeersWorker: BeersStoreProtocol {
 		}
 		
 		dataTask.resume()
-	}
+	} */
 	
 	
 	// MARK: Fetch Beers Using Combine. It Works
@@ -205,7 +209,7 @@ class BeersWorker: BeersStoreProtocol {
 					
 					let justData = Just(data).decode(type: T.self, decoder: JSONDecoder())
 						.mapError { error in
-							ApiError.internalError(reason: "\(httpResponse.statusCode)")
+							ApiError.clientError(reason: "\(httpResponse.statusCode)")
 						}
 						.eraseToAnyPublisher()
 					
@@ -234,4 +238,64 @@ class BeersWorker: BeersStoreProtocol {
 		
 		return dataTaskPublisher
 	} */
+	
+	
+	// MARK: Fetch Beers using Async-Await
+	func fetchBeers(withPaginationNumber: Int) async throws -> [BeerModel] {
+		// Error Simulator
+		switch withPaginationNumber {
+		case 400...499: // Simulate a client error (HTTP status code 400)
+			let error = ApiError.clientError(reason: "\(withPaginationNumber)")
+			throw error
+			
+		case 500...599:	// Simulate a server error (HTTP status code 500)
+			let error = ApiError.serverError(reason: "\(withPaginationNumber)")
+			throw error
+			
+		default:
+			break
+		}
+		
+		// let beerUrl: String = "https://api.punkapi.com/v2/beers?page=\(withPaginationNumber)&per_page=80"
+		let beerModel  = BeerFetchModel(page: String(withPaginationNumber))
+		let requestURL = BeerRequestModel(model: beerModel)
+		let decoder    = JSONDecoder()
+		decoder.keyDecodingStrategy  = .convertFromSnakeCase
+		decoder.dateDecodingStrategy = .iso8601
+		
+		guard let url = URL(string: requestURL.endpoint) else {
+			throw ApiError.badUrl
+		}
+		
+		let (data, response) = try await URLSession.shared.data(from: url)
+		
+		guard let response = response as? HTTPURLResponse else {
+			throw ApiError.unknownError
+		}
+		
+		switch response.statusCode {
+		case 200...299:
+			// Success case (2xx status codes)
+			do {
+				let beers = try decoder.decode([BeerModel].self, from: data)
+				
+				return beers
+			} catch let errorDecodingBeers {
+				print("Beers could not be decoded: \(String(describing: errorDecodingBeers.localizedDescription))")
+
+				throw ApiError.generic(errorDecodingBeers)
+			}
+			
+		case 400...499:
+			// Client error case (4xx status codes)
+			throw ApiError.clientError(reason: "\(response.statusCode)")
+
+		case 500...599:
+			// Server error case (5xx status codes)
+			throw ApiError.serverError(reason: "\(response.statusCode)")
+		
+		default:
+			throw ApiError.noInternetConnection
+		}
+	}
 }
