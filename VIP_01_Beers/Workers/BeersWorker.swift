@@ -28,6 +28,12 @@ protocol BeersStoreProtocol {
 
 // MARK: - Class. BeersWorker
 class BeersWorker: BeersStoreProtocol {
+	private let decoder = JSONDecoder()
+	
+	init() {
+		decoder.keyDecodingStrategy  = .convertFromSnakeCase
+		decoder.dateDecodingStrategy = .iso8601
+	}
 	// private var cancellable = Set<AnyCancellable>()  // Uncomment when using the Methodology with Combine
 	
 	// MARK: Fetch Beers using URLSession. It Works
@@ -259,10 +265,7 @@ class BeersWorker: BeersStoreProtocol {
 		// let beerUrl: String = "https://api.punkapi.com/v2/beers?page=\(withPaginationNumber)&per_page=80"
 		let beerModel  = BeerFetchModel(page: String(withPaginationNumber))
 		let requestURL = BeerRequestModel(model: beerModel)
-		let decoder    = JSONDecoder()
-		decoder.keyDecodingStrategy  = .convertFromSnakeCase
-		decoder.dateDecodingStrategy = .iso8601
-		
+				
 		guard let url = URL(string: requestURL.endpoint) else {
 			throw ApiError.badUrl
 		}
@@ -270,7 +273,7 @@ class BeersWorker: BeersStoreProtocol {
 		let (data, response) = try await URLSession.shared.data(from: url)
 		
 		guard let response = response as? HTTPURLResponse else {
-			throw ApiError.unknownError
+			throw ApiError.badResponse
 		}
 		
 		switch response.statusCode {

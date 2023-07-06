@@ -1,0 +1,106 @@
+
+/*
+  Localizable.strings
+  VIP_01_Beers
+
+  Created by Jorge Fuentes Casillas on 19/06/23.
+*/
+
+
+// MARK: - Language MenuVC
+"selectLanguageTitle" = "Select Language";
+"closeBtnTitle" = "Close";
+
+"englishLanguage" = "English";
+"frenchLanguage" = "French";
+"spanishLALanguage" = "Spanish-LA";
+"spanishLanguage" = "Spanish";
+"italianLanguage" = "Italian";
+
+
+// MARK: - Beers Collection VC
+"beersNavItemTitle" 					= "Indies Beers";
+"beersTabBarItem" 						= "Beers";
+
+// ViewController
+"beersResetButtonTitle"		 			= "Reset";
+"beersSearchBarPlaceholder" 			= "Search for a beer...";
+"beersSearchBarInvalidTextInputTitle" 	= "Invalid text input";
+"beersSearchBarInvalidTextInputMessage" = "Only alphanumeric characters are allowed in the search bar. Please try another search with valid characters";
+"emptyResultsLabelNoInternet"		    = "No internet connection. Please Try again later.";
+"emptyResultsLabelNoResults"		    = "There were no results for the beer you requested. Please try with another name.";
+
+// Alert controller messages in BeersCollectionViewController
+"alertControllerInvalidTextInputTitle" = "Invalid Text Input";
+"alertControllerInvalidTextInputMsg"   = "Your search can only contain numbers, letters and/or blank spaces, please try again with a valid format.";
+
+
+//----------------------------------------------
+// MARK: - Beer Details
+"beerSavedSuccessfullyTitle" 	= "Excellent!";
+"beerSavedSuccessfullyMsg"   	= "The beer was successfully saved in your list of Favorite Beers!";
+
+"beerCannotBeSavedTitle"     	= "Oops!";
+"beerCannotBeSavedMsg"		 	= "This beer is already in your list of Favorite Beers! Therefore, it will not be saved again in the list.";
+"beerSavedCommentsDefaultValue" = "Write here your observations about this beer...";
+
+
+//----------------------------------------------
+// MARK: - Favorite Beer
+// View Controller
+"favBeersNavItemTitle" 					= "Favorite Beers";
+"favBeersTabBarItem" 					= "Favorites";
+
+"searchFavBeerPlaceholder" = "Search your favorite beer...";
+"emptyFavoriteListTxt" 	   = "Your list of favorite beers is currently empty! You can save a beer in this favorite list from the Beer tab! Just click on the beer you like from the list, and inside the details of that selected beer, press the \"Save\" button in the right upper corner of the screen to save it in favorites.";
+
+// Alert controller messages
+"alertControllerInvalidQueryTitle" = "Invalid Query";
+"alertControllerInvalidQueryMsg"   = "Your search must not be empty. Please insert a valid value in order to search a beer in your list of favorites.";
+
+// Presenter
+// Alert controller messages
+"noBeersFoundTitle" = "No Beers Found!";
+"noBeersFoundMsg"   = "Your favorite list of beers does not have any beer with the requested query, please try again with another name.";
+
+
+// MARK: - Favorite Beer Details
+// View Controller
+"favBeerSaveObservationButtonTitle" = "Save observation";
+
+// Presenter
+// Alert controller messages
+"alertControllerOpinionSavedTitle" = "Great!";
+"alertControllerOpinionSavedMsg"   = "Your comment about this beer was successfully saved!";
+
+
+//----------------------------------------------
+// MARK: - BeersAlertVC
+// Customized Alert ViewController
+"okBtn" = "Ok!";
+
+
+//----------------------------------------------
+// MARK: - StatusCode Error
+// Alert Controller Error Titles and Messages
+// Client Error. response.statusCode = 4xx
+"clientErrorTitle" = "Error in Request";
+"clientErrorMsg"   = "There was an error in the request of information. Please try again later.";
+
+// Server Error. response.statusCode = 5xx
+"serverErrorTitle" = "Error in Reception";
+"serverErrorMsg"   = "There was an error from the server, no information received. Please try again later.";
+
+// No Internet Connection
+"alertControllerNoInternetTitle" = "No Internet Connection";
+"alertControllerNoInternetMsg"	 = "It seems that your device has no internet connection, please try again later.";
+
+
+//----------------------------------------------
+// MARK: - Error Description
+// Used in ApiError file
+"unknownError"    = "Unknown Error";
+"unknownResponse" = "Unknown Response";
+"noInternetError" = "Device With No Internet Connection";
+"badUrlError"     = "Invalid API URL. Please provide a valid URL";
+"genericError"    = "Generic error";

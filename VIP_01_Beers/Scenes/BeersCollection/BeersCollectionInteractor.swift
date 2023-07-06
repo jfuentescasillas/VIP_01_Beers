@@ -145,22 +145,23 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 				switch error {
 				case .clientError(let reason):
 					// Handle client error case
-					print("self.presenter?.showClientRequestErrorMsg(): \(reason)")
-					print("------------------------------------\n")
+					presenter?.fetchBeersCollectionDidFail(error: reason)
+					print("--------------No connection in client (in the INTERACTOR)--------------\n")
 					
 				case .serverError(let reason):
 					// Handle server error case
-					print("self.presenter?.showServerErrorMsg(): \(reason)")
-					print("------------------------------------\n")
+					presenter?.fetchBeersCollectionDidFail(error: reason)
+					print("--------------No connection in server (in the INTERACTOR)--------------\n")
 					
 				case .noInternetConnection:
 					// Handle no internet connection case
-					print("self.presenter?.showNoInternetMsg()")
-					print("------------------------------------\n")
+					let reason: String = "-1"
+					presenter?.fetchBeersCollectionDidFail(error: reason)
+					print("--------------No internet connection (in the INTERACTOR)--------------\n")
 					
 				default:
 					// Handle other errors
-					print("self.presenter?.showGenericErrorMsg()")
+					print("self.presenter?.showGenericErrorMsg() (in the INTERACTOR)")
 					print("------------------------------------\n")
 				}
 				
@@ -169,11 +170,11 @@ extension BeersCollectionInteractor: BeersCollectionBusinessLogic {
 				
 			} catch /* let errorCatched */ {
 				// Handle unexpected errors. Most probably of type noInternetConnection
-				print("------------------------------------\n")
-				print("Most probably this is a self.presenter?.showNoInternetMsg() but it should be a self.presenter?.showGenericErrorMsg()")
-				// print("Most probably this is a self.presenter?.showNoInternetMsg() but it should be a self.presenter?.showGenericErrorMsg(): \(errorCatched)")
-				print("------------------------------------\n")
-				
+				print("------------------Handle unexpected errors (in the INTERACTOR).------------------\n")
+				let reason: String = "-1"
+				presenter?.fetchBeersCollectionDidFail(error: reason)
+				print("------------------Handle unexpected errors (in the INTERACTOR).------------------\n")
+
 				isLoadingMoreBeers = false
 				// dismissLoadingView()
 			}

@@ -14,12 +14,20 @@ import UIKit
 protocol BeersCollectionDisplayLogic: AnyObject {
 	func displayStaticData(viewModel: BeersCollection.StaticData.ViewModel)
 	func displayBeersList(viewModel: BeersCollection.FetchBeers.ViewModel)
+	
+	func displayErrorFetchingBeers(withError: Int)
+}
+
+
+protocol BeersCollectionDelegate: AnyObject {
+	func didTapMenuBtn()
 }
 
 
 // MARK: - Class
 class BeersCollectionViewController: UIViewController {
 	// MARK: - Properties
+	weak var delegate: BeersCollectionDelegate?
 	var interactor: BeersCollectionBusinessLogic?
 	var router: (BeersCollectionRoutingLogic & BeersCollectionDataPassing)?
 	
@@ -89,7 +97,18 @@ class BeersCollectionViewController: UIViewController {
 	
 	
 	private func setupNavigationBar() {
-		
+		if let globeImage = UIImage(systemName: "globe")?.withRenderingMode(.alwaysTemplate) {
+			let menuButton = UIBarButtonItem(image: globeImage,
+											 style: .done,
+											 target: self,
+											 action: #selector(didTapMenuButton))
+			navigationItem.leftBarButtonItem = menuButton
+		}
+	}
+	
+	
+	@objc private func didTapMenuButton() {
+		delegate?.didTapMenuBtn()
 	}
 }
 
@@ -114,6 +133,35 @@ extension BeersCollectionViewController: BeersCollectionDisplayLogic {
 		print("In the VIEWCONTROLLER (and the cycle is closed), the viewModel is: ")
 		print("\(viewModel)")
 		print("----------------------------------------------\n")
+	}
+	
+	
+	func displayErrorFetchingBeers(withError: Int) {
+		switch withError {
+		case 400...499:
+			// Handle client error case
+			DispatchQueue.main.async {
+				self.presentBeersAlert(title: LocalizedKeys.AlertControllerErrorTitle.clientErrorTitle,
+									   message: LocalizedKeys.AlertControllerErrorMsg.clientErrorMsg,
+									   buttonTitle: LocalizedKeys.AlertControllerBtnTitle.okButtonTitle)
+			}
+						
+		case 500...599:
+			// Handle server error case
+			DispatchQueue.main.async {
+				self.presentBeersAlert(title: LocalizedKeys.AlertControllerErrorTitle.serverErrorTitle,
+									   message: LocalizedKeys.AlertControllerErrorMsg.serverErrorMsg,
+									   buttonTitle: LocalizedKeys.AlertControllerBtnTitle.okButtonTitle)
+			}
+					
+		default:
+			// Handle other errors and no internet connection
+			DispatchQueue.main.async {
+				self.presentBeersAlert(title: LocalizedKeys.AlertControllerErrorTitle.noInternetTitle,
+									   message: LocalizedKeys.AlertControllerErrorMsg.noInternetMsg,
+									   buttonTitle: LocalizedKeys.AlertControllerBtnTitle.okButtonTitle)
+			}
+		}
 	}
 }
 

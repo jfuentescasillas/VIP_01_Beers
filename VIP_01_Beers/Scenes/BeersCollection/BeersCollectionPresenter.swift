@@ -53,6 +53,29 @@ class BeersCollectionPresenter: BeersCollectionPresentationLogic {
 	
 	func fetchBeersCollectionDidFail(error: String) {
 		print("In the PRESENTER, the error was: \(error)")
+		print("------------------------------------\n")
+
+		let errorInt: Int = Int(error) ?? -1
+
+		switch errorInt {
+		case 400...499:
+			// Handle client error case
+			print("In the PRESENTER, client error case.")
+			viewController?.displayErrorFetchingBeers(withError: errorInt)
+			print("------------------------------------\n")
+			
+		case 500...599:
+			// Handle server error case
+			print("In the PRESENTER, server error case.")
+			viewController?.displayErrorFetchingBeers(withError: errorInt)
+			print("------------------------------------\n")
+		
+		default:
+			// Handle other errors and no internet connection
+			print("In the PRESENTER, default error case.")
+			viewController?.displayErrorFetchingBeers(withError: errorInt)
+			print("------------------------------------\n")
+		}
 	}
 	
 		

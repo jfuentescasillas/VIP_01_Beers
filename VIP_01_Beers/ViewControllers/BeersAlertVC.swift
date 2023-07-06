@@ -11,7 +11,9 @@ class BeersAlertVC: UIViewController {
 	private let containerView = BeersAlertContainerView()
 	private let titleLabel = BeersTitleLabel(textAlignment: .center, fontSize: 20)
 	private let msgLabel = BeersBodyLabel(textAlignment: .center)
-	private let actionBtn = BeerButton(color: .systemPink, title: "Ok", systemImageName: "checkmark.circle")
+	private let actionBtn = BeerButton(color: .systemGreen,
+									   title: LocalizedKeys.AlertControllerBtnTitle.okButtonTitle,
+									   systemImageName: "checkmark.circle")
 	private let padding: CGFloat = 20
 	
 	var alertTitle: String?

@@ -12,6 +12,7 @@ import Foundation
 // MARK: - Error Manager
 enum ApiError: Error, LocalizedError {
 	case unknownError
+	case badResponse
 	case noInternetConnection
 	case badUrl
 	case generic(Error?)
@@ -22,16 +23,19 @@ enum ApiError: Error, LocalizedError {
 	var errorDescription: String? {
 		switch self {
 		case .unknownError:
-			return "Unknown Error"
+            return "unknownError".localized
+			
+		case .badResponse:
+            return "unknownResponse".localized
 			
 		case .noInternetConnection:
-			return "Device With No Internet Connection"
+            return "noInternetError".localized
 			
 		case .badUrl:
-			return "Invalid API URL. Please provide a valid URL"
+            return "badUrlError".localized
 			
 		case .generic(let error):
-			return error?.localizedDescription ?? "Generic error"
+            return error?.localizedDescription ?? "genericError".localized
 			
 		case .clientError(let error),
 				.serverError(let error),

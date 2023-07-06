@@ -1,0 +1,106 @@
+
+/*
+  Localizable.strings
+  VIP_01_Beers
+
+  Created by Jorge Fuentes Casillas on 19/06/23.
+*/
+
+
+// MARK: - Language Menu
+"selectLanguageTitle" = "Elegir Idioma";
+"closeBtnTitle" = "Cerrar";
+
+"englishLanguage" = "Inglés";
+"frenchLanguage" = "Francés";
+"spanishLALanguage" = "Español-LA";
+"spanishLanguage" = "Español";
+"italianLanguage" = "Italiano";
+
+
+// MARK: - Beers Collection VC
+"beersNavItemTitle" 					= "Cervezas Indie";
+"beersTabBarItem" 						= "Cervezas";
+
+// ViewController
+"beersResetButtonTitle"		 			= "Restablecer";
+"beersSearchBarPlaceholder" 			= "Buscar cerveza...";
+"beersSearchBarInvalidTextInputTitle" 	= "Texto Inválido";
+"beersSearchBarInvalidTextInputMessage" = "Solo se permiten caracteres alfanuméricos en la barra de búsqueda. Por favor reinténtalo con caracteres válidos";
+"emptyResultsLabelNoInternet"		    = "Sin conexión a internet. Por favor reinténtalo de nuevo.";
+"emptyResultsLabelNoResults"		    = "No hay resultados para la cerveza solicitada. Por favor inténtalo con otro nombre.";
+
+// Alert controller messages in BeersCollectionViewController
+"alertControllerInvalidTextInputTitle" = "Texto Inválido";
+"alertControllerInvalidTextInputMsg"   = "La búsqueda solo puede contener números, letras y/o espacios en blanco, favor de reintentarlo con un formato válido.";
+
+
+//----------------------------------------------
+// MARK: - Beer Details
+"beerSavedSuccessfullyTitle" 	= "¡Excelente!";
+"beerSavedSuccessfullyMsg"   	= "¡La cerveza se guardó con éxito en tu lista de cervezas favoritas!";
+
+"beerCannotBeSavedTitle"     	= "¡Épale!";
+"beerCannotBeSavedMsg"		 	= "Esta cerveza ya existe en tu lista de Cervezas Favoritas, por lo tanto, no se guardará.";
+"beerSavedCommentsDefaultValue" = "Escribe tus observaciones acerca de esta cerveza...";
+
+
+//----------------------------------------------
+// MARK: - Favorite Beer
+// View Controller
+"favBeersNavItemTitle" = "Cervezas Favoritas";
+"favBeersTabBarItem"   = "Favoritas";
+
+"searchFavBeerPlaceholder" = "Busca tu birra favorita...";
+"emptyFavoriteListTxt" 	   = "¡Tu lista de cervezas favoritas está vacía! Guarda una desde el catálogo de cervezas en la pestaña Cerveza. Solo haz click en la cerveza que te guste de la lista y dentro de sus detalles, pulsa sobre el botón \"Guardar\" en la esquina superior derecha de la pantalla.";
+
+// Alert controller messages
+"alertControllerInvalidQueryTitle" = "Búsqueda Inválida";
+"alertControllerInvalidQueryMsg"   = "Tu búsqueda no puede estar vacía. Por favor use un valor válido para buscar una cerveza en tu lista de favoritas.";
+
+// Presenter
+// Alert controller messages
+"noBeersFoundTitle" = "¡No se encontraron cervezas!";
+"noBeersFoundMsg"   = "En tu lista de cervezas favoritas no existe una con el nombre solicitado, reinténtalo con otro nombre, por favor.";
+
+
+// MARK: - Favorite Beer Details
+// View Controller
+"favBeerSaveObservationButtonTitle" = "Guardar observaciones";
+
+// Presenter
+// Alert controller messages
+"alertControllerOpinionSavedTitle" = "¡Fantástico!";
+"alertControllerOpinionSavedMsg"   = "¡Tus observaciones acerca de esta cerveza fueron exitosamente guardados!";
+
+
+//----------------------------------------------
+// MARK: - BeersAlertVC
+// Customized Alert ViewController
+"okBtn" = "¡Entendido!";
+
+
+//----------------------------------------------
+// MARK: - StatusCode Error
+// Alert Controller Error Titles and Messages
+// Client Error. response.statusCode = 4xx
+"clientErrorTitle" = "Error En Solicitud";
+"clientErrorMsg"   = "Hubo un error al pedir información. Intenta más tarde.";
+
+// Server Error. response.statusCode = 5xx
+"serverErrorTitle" = "Error en Recepción";
+"serverErrorMsg"   = "Hubo un error desde el servidor, no pudo recibirse información. Intenta más tarde.";
+
+// No Internet Connection
+"alertControllerNoInternetTitle" = "Sin Conexión a Internet";
+"alertControllerNoInternetMsg"	 = "Parece que tu dispositivo no tiene internet. Reinténtalo más tarde por favor.";
+
+
+//----------------------------------------------
+// MARK: - Error Description
+// Used in ApiError file
+"unknownError"    = "Error desconocido";
+"unknownResponse" = "Respuesta desconocida";
+"noInternetError" = "Teléfono sin conexión a internet";
+"badUrlError"     = "API URL inválida. Dé una dirección URL válida";
+"genericError"    = "Error genérico";

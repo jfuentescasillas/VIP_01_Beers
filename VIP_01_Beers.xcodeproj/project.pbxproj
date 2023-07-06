@@ -19,6 +19,9 @@
 		110D2C822A28B4D500511782 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D2C812A28B4D500511782 /* ApiError.swift */; };
 		110D2C862A28B80A00511782 /* BeersDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 110D2C842A28B80A00511782 /* BeersDataModel.xcdatamodeld */; };
 		110D2C882A28BAA500511782 /* BeersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D2C872A28BAA500511782 /* BeersWorker.swift */; };
+		116159E82A418E780020CAA6 /* BeersTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116159E72A418E780020CAA6 /* BeersTabBarController.swift */; };
+		116159EA2A4193BB0020CAA6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116159E92A4193BB0020CAA6 /* MenuViewController.swift */; };
+		116159EC2A419BAA0020CAA6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116159EB2A419BAA0020CAA6 /* ContainerViewController.swift */; };
 		116C842E2A34C9E9007BE3B2 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 116C842D2A34C9E9007BE3B2 /* Collections */; };
 		116C84302A34C9E9007BE3B2 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 116C842F2A34C9E9007BE3B2 /* OrderedCollections */; };
 		1195ACE82A24F5E200C02F28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1195ACE72A24F5E200C02F28 /* AppDelegate.swift */; };
@@ -42,7 +45,11 @@
 		11B44B342A261143001A0A59 /* FavoriteBeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B2E2A261143001A0A59 /* FavoriteBeersViewController.swift */; };
 		11B44B352A261143001A0A59 /* FavoriteBeersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B2F2A261143001A0A59 /* FavoriteBeersInteractor.swift */; };
 		11B44B362A261143001A0A59 /* FavoriteBeersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B302A261143001A0A59 /* FavoriteBeersView.swift */; };
-		11B44B392A265583001A0A59 /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B44B382A265583001A0A59 /* UITabBarController.swift */; };
+		11C117A82A40556B00A76F35 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C117A72A40556B00A76F35 /* LocalizedStrings.swift */; };
+		11C117B32A4062FF00A76F35 /* SringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C117B22A4062FF00A76F35 /* SringExt.swift */; };
+		11C117B62A40692E00A76F35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11C117B82A40692E00A76F35 /* Localizable.strings */; };
+		11E044832A43445200BA7059 /* LocaleLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E044822A43445200BA7059 /* LocaleLanguages.swift */; };
+		E47262752A56D241008AFBA7 /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47262742A56D241008AFBA7 /* BeerCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +82,9 @@
 		110D2C812A28B4D500511782 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		110D2C852A28B80A00511782 /* BeersDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeersDataModel.xcdatamodel; sourceTree = "<group>"; };
 		110D2C872A28BAA500511782 /* BeersWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersWorker.swift; sourceTree = "<group>"; };
+		116159E72A418E780020CAA6 /* BeersTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersTabBarController.swift; sourceTree = "<group>"; };
+		116159E92A4193BB0020CAA6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		116159EB2A419BAA0020CAA6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		1195ACE42A24F5E200C02F28 /* VIP_01_Beers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIP_01_Beers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1195ACE72A24F5E200C02F28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1195ACE92A24F5E200C02F28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +110,15 @@
 		11B44B2E2A261143001A0A59 /* FavoriteBeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersViewController.swift; sourceTree = "<group>"; };
 		11B44B2F2A261143001A0A59 /* FavoriteBeersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersInteractor.swift; sourceTree = "<group>"; };
 		11B44B302A261143001A0A59 /* FavoriteBeersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBeersView.swift; sourceTree = "<group>"; };
-		11B44B382A265583001A0A59 /* UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
+		11C117A72A40556B00A76F35 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		11C117B22A4062FF00A76F35 /* SringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SringExt.swift; sourceTree = "<group>"; };
+		11C117B72A40692E00A76F35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11C117B92A40693100A76F35 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11C117BA2A40693200A76F35 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		11D85E232A42000A00F9EADD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11D85E242A42001400F9EADD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		11E044822A43445200BA7059 /* LocaleLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleLanguages.swift; sourceTree = "<group>"; };
+		E47262742A56D241008AFBA7 /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				110D2C6D2A27624C00511782 /* UIViewControllerExt.swift */,
+				11C117B22A4062FF00A76F35 /* SringExt.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -176,6 +195,8 @@
 		110D2C742A279EB200511782 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				116159EB2A419BAA0020CAA6 /* ContainerViewController.swift */,
+				116159E92A4193BB0020CAA6 /* MenuViewController.swift */,
 				110D2C772A27AC7300511782 /* BeersAlertVC.swift */,
 			);
 			path = ViewControllers;
@@ -216,6 +237,7 @@
 			children = (
 				110D2C812A28B4D500511782 /* ApiError.swift */,
 				11091D7A2A2B5A7E00101394 /* RequestTool.swift */,
+				11C117A72A40556B00A76F35 /* LocalizedStrings.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -251,6 +273,7 @@
 		1195ACE62A24F5E200C02F28 /* VIP_01_Beers */ = {
 			isa = PBXGroup;
 			children = (
+				11E044812A43442E00BA7059 /* Locale */,
 				11A919B82A39C61900AE65BA /* Managers */,
 				110D2C652A2737CC00511782 /* CustomViews */,
 				110D2C7D2A288BA200511782 /* EntitiesOrModels */,
@@ -262,6 +285,7 @@
 				110D2C792A27ADDC00511782 /* Views */,
 				110D2C742A279EB200511782 /* ViewControllers */,
 				110D2C832A28B78600511782 /* Workers */,
+				11C117B82A40692E00A76F35 /* Localizable.strings */,
 			);
 			path = VIP_01_Beers;
 			sourceTree = "<group>";
@@ -286,6 +310,7 @@
 		1195AD1A2A25ED7D00C02F28 /* BeersCollection */ = {
 			isa = PBXGroup;
 			children = (
+				E47262732A56D1D7008AFBA7 /* Cells */,
 				11B44B232A25FB5C001A0A59 /* BeersCollectionView.swift */,
 				11B44B212A25FB5C001A0A59 /* BeersCollectionViewController.swift */,
 				11B44B222A25FB5C001A0A59 /* BeersCollectionInteractor.swift */,
@@ -329,9 +354,25 @@
 		11B44B372A265562001A0A59 /* TabBarControllers */ = {
 			isa = PBXGroup;
 			children = (
-				11B44B382A265583001A0A59 /* UITabBarController.swift */,
+				116159E72A418E780020CAA6 /* BeersTabBarController.swift */,
 			);
 			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		11E044812A43442E00BA7059 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				11E044822A43445200BA7059 /* LocaleLanguages.swift */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		E47262732A56D1D7008AFBA7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E47262742A56D241008AFBA7 /* BeerCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +465,10 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				"es-419",
+				es,
+				it,
 			);
 			mainGroup = 1195ACDB2A24F5E200C02F28;
 			packageReferences = (
@@ -446,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1195ACF72A24F5E500C02F28 /* LaunchScreen.storyboard in Resources */,
+				11C117B62A40692E00A76F35 /* Localizable.strings in Resources */,
 				1195ACF42A24F5E500C02F28 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,12 +517,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B44B392A265583001A0A59 /* UITabBarController.swift in Sources */,
 				11B44B342A261143001A0A59 /* FavoriteBeersViewController.swift in Sources */,
 				11B44B312A261143001A0A59 /* FavoriteBeersPresenter.swift in Sources */,
+				E47262752A56D241008AFBA7 /* BeerCollectionViewCell.swift in Sources */,
 				110D2C782A27AC7300511782 /* BeersAlertVC.swift in Sources */,
+				116159EA2A4193BB0020CAA6 /* MenuViewController.swift in Sources */,
+				11C117A82A40556B00A76F35 /* LocalizedStrings.swift in Sources */,
 				110D2C732A279D6F00511782 /* BeersBodyLabel.swift in Sources */,
 				11B44B322A261143001A0A59 /* FavoriteBeersRouter.swift in Sources */,
+				11C117B32A4062FF00A76F35 /* SringExt.swift in Sources */,
 				11B44B332A261143001A0A59 /* FavoriteBeersModels.swift in Sources */,
 				11091D7B2A2B5A7E00101394 /* RequestTool.swift in Sources */,
 				11B44B272A25FB5C001A0A59 /* BeersCollectionViewController.swift in Sources */,
@@ -492,7 +541,10 @@
 				11B44B352A261143001A0A59 /* FavoriteBeersInteractor.swift in Sources */,
 				110D2C672A27385B00511782 /* BeerButton.swift in Sources */,
 				110D2C7F2A288BFF00511782 /* BeerModel.swift in Sources */,
+				116159E82A418E780020CAA6 /* BeersTabBarController.swift in Sources */,
 				11B44B262A25FB5C001A0A59 /* BeersCollectionModels.swift in Sources */,
+				11E044832A43445200BA7059 /* LocaleLanguages.swift in Sources */,
+				116159EC2A419BAA0020CAA6 /* ContainerViewController.swift in Sources */,
 				110D2C6E2A27624C00511782 /* UIViewControllerExt.swift in Sources */,
 				11961C3E2A2A52430089DEDB /* BeerDetailsModel.swift in Sources */,
 				11B44B252A25FB5C001A0A59 /* BeersCollectionRouter.swift in Sources */,
@@ -544,6 +596,18 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		11C117B82A40692E00A76F35 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11C117B72A40692E00A76F35 /* en */,
+				11C117B92A40693100A76F35 /* fr */,
+				11C117BA2A40693200A76F35 /* es-419 */,
+				11D85E232A42000A00F9EADD /* es */,
+				11D85E242A42001400F9EADD /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -551,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -611,6 +676,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
